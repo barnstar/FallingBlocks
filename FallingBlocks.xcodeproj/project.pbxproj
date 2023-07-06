@@ -8,18 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		ABCA0C882A52646100FED760 /* FallingBlocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */; };
-		ABCA0C8A2A52646100FED760 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C892A52646100FED760 /* ContentView.swift */; };
 		ABCA0C8C2A52646100FED760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0C8B2A52646100FED760 /* Assets.xcassets */; };
 		ABCA0C902A52646100FED760 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0C8F2A52646100FED760 /* Preview Assets.xcassets */; };
+		ABCA0C972A5264C500FED760 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C962A5264C500FED760 /* GameController.swift */; };
+		ABCA0C992A5264DB00FED760 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C982A5264DB00FED760 /* GameView.swift */; };
+		ABCA0C9B2A52752D00FED760 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C9A2A52752D00FED760 /* Orientation.swift */; };
+		ABCA0C9D2A52759600FED760 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C9C2A52759600FED760 /* Renderer.swift */; };
+		ABCA0CA02A5276AA00FED760 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C9F2A5276AA00FED760 /* Piece.swift */; };
+		ABCA0CA22A5277E000FED760 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CA12A5277E000FED760 /* Board.swift */; };
+		ABCA0CA42A527C8400FED760 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0CA32A527C8400FED760 /* README.md */; };
+		ABCA0CA72A53138500FED760 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CA62A53138500FED760 /* Row.swift */; };
+		ABCA0CAA2A5336B300FED760 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCA0CA92A5336B300FED760 /* GameController.framework */; };
+		ABCA0CAC2A53B56E00FED760 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CAB2A53B56E00FED760 /* GameState.swift */; };
+		ABCA0CAE2A53CDC600FED760 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CAD2A53CDC600FED760 /* BoardView.swift */; };
+		ABCA0CB02A53CDE800FED760 /* PiecePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CAF2A53CDE800FED760 /* PiecePreview.swift */; };
+		ABCA0CB22A53CE1B00FED760 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB12A53CE1B00FED760 /* ControlsView.swift */; };
+		ABCA0CB42A53CE3C00FED760 /* IndicatorViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB32A53CE3C00FED760 /* IndicatorViews.swift */; };
+		ABCA0CB72A53CFB500FED760 /* ViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB62A53CFB500FED760 /* ViewUtility.swift */; };
+		ABCA0CB92A54FAA500FED760 /* KeyboardInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB82A54FAA500FED760 /* KeyboardInputController.swift */; };
+		ABCA0CBB2A56117600FED760 /* PieceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CBA2A56117600FED760 /* PieceFactory.swift */; };
+		ABCA0CBD2A56145A00FED760 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CBC2A56145A00FED760 /* Cell.swift */; };
+		ABCA0CBF2A562D7400FED760 /* GameAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ABCA0C842A52646100FED760 /* FallingBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingBlocksApp.swift; sourceTree = "<group>"; };
-		ABCA0C892A52646100FED760 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ABCA0C8B2A52646100FED760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABCA0C8D2A52646100FED760 /* FallingBlocks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FallingBlocks.entitlements; sourceTree = "<group>"; };
 		ABCA0C8F2A52646100FED760 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ABCA0C962A5264C500FED760 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		ABCA0C982A5264DB00FED760 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		ABCA0C9A2A52752D00FED760 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		ABCA0C9C2A52759600FED760 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		ABCA0C9F2A5276AA00FED760 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		ABCA0CA12A5277E000FED760 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		ABCA0CA32A527C8400FED760 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		ABCA0CA62A53138500FED760 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		ABCA0CA92A5336B300FED760 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		ABCA0CAB2A53B56E00FED760 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		ABCA0CAD2A53CDC600FED760 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		ABCA0CAF2A53CDE800FED760 /* PiecePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiecePreview.swift; sourceTree = "<group>"; };
+		ABCA0CB12A53CE1B00FED760 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		ABCA0CB32A53CE3C00FED760 /* IndicatorViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViews.swift; sourceTree = "<group>"; };
+		ABCA0CB62A53CFB500FED760 /* ViewUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtility.swift; sourceTree = "<group>"; };
+		ABCA0CB82A54FAA500FED760 /* KeyboardInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInputController.swift; sourceTree = "<group>"; };
+		ABCA0CBA2A56117600FED760 /* PieceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceFactory.swift; sourceTree = "<group>"; };
+		ABCA0CBC2A56145A00FED760 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCA0CAA2A5336B300FED760 /* GameController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,8 +73,11 @@
 		ABCA0C7B2A52646100FED760 = {
 			isa = PBXGroup;
 			children = (
+				ABCA0CA32A527C8400FED760 /* README.md */,
+				ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */,
 				ABCA0C862A52646100FED760 /* FallingBlocks */,
 				ABCA0C852A52646100FED760 /* Products */,
+				ABCA0CA82A5336B200FED760 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,8 +92,8 @@
 		ABCA0C862A52646100FED760 /* FallingBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */,
-				ABCA0C892A52646100FED760 /* ContentView.swift */,
+				ABCA0CA52A527CAD00FED760 /* Game */,
+				ABCA0C9E2A5275D000FED760 /* View */,
 				ABCA0C8B2A52646100FED760 /* Assets.xcassets */,
 				ABCA0C8D2A52646100FED760 /* FallingBlocks.entitlements */,
 				ABCA0C8E2A52646100FED760 /* Preview Content */,
@@ -67,6 +107,45 @@
 				ABCA0C8F2A52646100FED760 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABCA0C9E2A5275D000FED760 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABCA0C982A5264DB00FED760 /* GameView.swift */,
+				ABCA0CAD2A53CDC600FED760 /* BoardView.swift */,
+				ABCA0CAF2A53CDE800FED760 /* PiecePreview.swift */,
+				ABCA0CB12A53CE1B00FED760 /* ControlsView.swift */,
+				ABCA0CB32A53CE3C00FED760 /* IndicatorViews.swift */,
+				ABCA0CB62A53CFB500FED760 /* ViewUtility.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABCA0CA52A527CAD00FED760 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				ABCA0C962A5264C500FED760 /* GameController.swift */,
+				ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */,
+				ABCA0CB82A54FAA500FED760 /* KeyboardInputController.swift */,
+				ABCA0CAB2A53B56E00FED760 /* GameState.swift */,
+				ABCA0C9A2A52752D00FED760 /* Orientation.swift */,
+				ABCA0C9C2A52759600FED760 /* Renderer.swift */,
+				ABCA0C9F2A5276AA00FED760 /* Piece.swift */,
+				ABCA0CBA2A56117600FED760 /* PieceFactory.swift */,
+				ABCA0CA12A5277E000FED760 /* Board.swift */,
+				ABCA0CA62A53138500FED760 /* Row.swift */,
+				ABCA0CBC2A56145A00FED760 /* Cell.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		ABCA0CA82A5336B200FED760 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABCA0CA92A5336B300FED760 /* GameController.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCA0CA42A527C8400FED760 /* README.md in Resources */,
 				ABCA0C902A52646100FED760 /* Preview Assets.xcassets in Resources */,
 				ABCA0C8C2A52646100FED760 /* Assets.xcassets in Resources */,
 			);
@@ -139,7 +219,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABCA0C8A2A52646100FED760 /* ContentView.swift in Sources */,
+				ABCA0CB42A53CE3C00FED760 /* IndicatorViews.swift in Sources */,
+				ABCA0CB72A53CFB500FED760 /* ViewUtility.swift in Sources */,
+				ABCA0C9B2A52752D00FED760 /* Orientation.swift in Sources */,
+				ABCA0CB92A54FAA500FED760 /* KeyboardInputController.swift in Sources */,
+				ABCA0CA72A53138500FED760 /* Row.swift in Sources */,
+				ABCA0CBD2A56145A00FED760 /* Cell.swift in Sources */,
+				ABCA0CBF2A562D7400FED760 /* GameAnimation.swift in Sources */,
+				ABCA0CA02A5276AA00FED760 /* Piece.swift in Sources */,
+				ABCA0C992A5264DB00FED760 /* GameView.swift in Sources */,
+				ABCA0CB22A53CE1B00FED760 /* ControlsView.swift in Sources */,
+				ABCA0C972A5264C500FED760 /* GameController.swift in Sources */,
+				ABCA0C9D2A52759600FED760 /* Renderer.swift in Sources */,
+				ABCA0CAC2A53B56E00FED760 /* GameState.swift in Sources */,
+				ABCA0CBB2A56117600FED760 /* PieceFactory.swift in Sources */,
+				ABCA0CAE2A53CDC600FED760 /* BoardView.swift in Sources */,
+				ABCA0CB02A53CDE800FED760 /* PiecePreview.swift in Sources */,
+				ABCA0CA22A5277E000FED760 /* Board.swift in Sources */,
 				ABCA0C882A52646100FED760 /* FallingBlocksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
