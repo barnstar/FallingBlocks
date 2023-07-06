@@ -56,7 +56,6 @@
 		ABCA0CBA2A56117600FED760 /* PieceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceFactory.swift; sourceTree = "<group>"; };
 		ABCA0CBC2A56145A00FED760 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAnimation.swift; sourceTree = "<group>"; };
-		ABCA0CC02A570B4E00FED760 /* ScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ScreenShot.png; path = ../../ScreenShot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				ABCA0CA32A527C8400FED760 /* README.md */,
-				ABCA0CC02A570B4E00FED760 /* ScreenShot.png */,
 				ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */,
 				ABCA0C862A52646100FED760 /* FallingBlocks */,
 				ABCA0C852A52646100FED760 /* Products */,
