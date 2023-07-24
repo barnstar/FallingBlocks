@@ -84,7 +84,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB26F7CD2A69861100242479 /* Audio */ = {
+		AB26F7CD2A69861100242479 /* AudioRes */ = {
 			isa = PBXGroup;
 			children = (
 				AB26F7CF2A6B05C100242479 /* oneLine.caf */,
@@ -92,7 +92,7 @@
 				AB26F7CE2A6B04D000242479 /* gameOver.caf */,
 				AB26F7C92A686A0400242479 /* Theme1.m4a */,
 			);
-			path = Audio;
+			path = AudioRes;
 			sourceTree = "<group>";
 		};
 		AB8722C42A6ED46E0010CD98 /* Audio */ = {
@@ -152,7 +152,7 @@
 		ABCA0C862A52646100FED760 /* FallingBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				AB26F7CD2A69861100242479 /* Audio */,
+				AB26F7CD2A69861100242479 /* AudioRes */,
 				ABCA0CA52A527CAD00FED760 /* Game */,
 				ABCA0C9E2A5275D000FED760 /* View */,
 				ABCA0C8B2A52646100FED760 /* Assets.xcassets */,

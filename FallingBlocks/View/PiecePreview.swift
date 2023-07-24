@@ -33,7 +33,9 @@ struct PiecePreview: View {
     var body: some View {
         VStack {
             Canvas { context, size in
-                renderer.render(piece: model.nextPiece, context: &context, size: size)
+                renderer.render(piece: model.nextPiece,
+                                context: &context,
+                                size: size)
             }
         }
     }

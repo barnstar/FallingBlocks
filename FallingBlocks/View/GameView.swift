@@ -32,6 +32,37 @@ struct Layout {
 struct GameView: View {
     @EnvironmentObject var gameController: FBGameController
     @EnvironmentObject var gameState: GameState
+    
+    var sideBar: some View {
+        GeometryReader { geometry in
+            VStack(alignment: .leading){
+                Spacer.vertical(60)
+                
+                ScoreView(model: gameState.viewModel)
+                
+                LinesView(model: gameState.viewModel)
+                
+                LevelView(model: gameState.viewModel)
+                
+                Spacer.vertical(10)
+                
+                PiecePreview (model: gameState.viewModel)
+                    .frame(width: geometry.size.width, height: geometry.size.width * 0.5)
+                    .background {
+                        Color(.black).opacity(0.8)
+                    }
+                    .cornerRadius(2.0)
+                
+                Spacer.vertical(30)
+                
+                StartButton(model: gameState.viewModel) {
+                    gameController.start()
+                }
+                
+                Spacer()
+            }
+        }
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -54,36 +85,11 @@ struct GameView: View {
                                 .frame(width: geometry.size.width*0.7,
                                        height: geometry.size.height*0.8)
                         }.padding(5)
+                     
+                        sideBar
+                            .padding(5)
+                            .frame(width: geometry.size.width * 0.2)
                         
-                        
-                        VStack(alignment: .leading){
-                            Spacer.vertical(60)
-                            
-                            ScoreView(model: gameState.viewModel)
-                            
-                            LinesView(model: gameState.viewModel)
-                            
-                            LevelView(model: gameState.viewModel)
-                            
-                            Spacer.vertical(10)
-                            
-                            PiecePreview (model: gameState.viewModel)
-                                .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.1)
-                                .background {
-                                    Color(.black).opacity(0.8)
-                                }
-                                .cornerRadius(2.0)
-                            
-                            Spacer.vertical(30)
-                            
-                            StartButton(model: gameState.viewModel) {
-                                gameController.start()
-                            }
-                            
-                            Spacer()
-                        }
-                        .padding(5)
-                        .frame(width: geometry.size.width * 0.2)
                     }
                 }
             }
