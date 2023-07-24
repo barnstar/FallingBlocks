@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB26F7CA2A686A0400242479 /* Theme1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AB26F7C92A686A0400242479 /* Theme1.m4a */; };
+		AB26F7CC2A686D0F00242479 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26F7CB2A686D0F00242479 /* AudioEngine.swift */; };
+		AB8722BF2A6B08E40010CD98 /* oneLine.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB26F7CF2A6B05C100242479 /* oneLine.caf */; };
+		AB8722C02A6B08E70010CD98 /* fourLines.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB26F7D02A6B06A300242479 /* fourLines.caf */; };
+		AB8722C12A6B08EA0010CD98 /* gameOver.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB26F7CE2A6B04D000242479 /* gameOver.caf */; };
+		AB8722C32A6ED4130010CD98 /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8722C22A6ED4130010CD98 /* SoundEffects.swift */; };
 		ABCA0C882A52646100FED760 /* FallingBlocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */; };
 		ABCA0C8C2A52646100FED760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0C8B2A52646100FED760 /* Assets.xcassets */; };
 		ABCA0C902A52646100FED760 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0C8F2A52646100FED760 /* Preview Assets.xcassets */; };
@@ -33,6 +39,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB26F7C92A686A0400242479 /* Theme1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Theme1.m4a; sourceTree = "<group>"; };
+		AB26F7CB2A686D0F00242479 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		AB26F7CE2A6B04D000242479 /* gameOver.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver.caf; sourceTree = "<group>"; };
+		AB26F7CF2A6B05C100242479 /* oneLine.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oneLine.caf; sourceTree = "<group>"; };
+		AB26F7D02A6B06A300242479 /* fourLines.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fourLines.caf; sourceTree = "<group>"; };
+		AB8722C22A6ED4130010CD98 /* SoundEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
 		ABCA0C842A52646100FED760 /* FallingBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingBlocksApp.swift; sourceTree = "<group>"; };
 		ABCA0C8B2A52646100FED760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +84,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB26F7CD2A69861100242479 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				AB26F7CF2A6B05C100242479 /* oneLine.caf */,
+				AB26F7D02A6B06A300242479 /* fourLines.caf */,
+				AB26F7CE2A6B04D000242479 /* gameOver.caf */,
+				AB26F7C92A686A0400242479 /* Theme1.m4a */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		AB8722C42A6ED46E0010CD98 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				AB26F7CB2A686D0F00242479 /* AudioEngine.swift */,
+				AB8722C22A6ED4130010CD98 /* SoundEffects.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		AB8722C52A6ED4770010CD98 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				ABCA0C9F2A5276AA00FED760 /* Piece.swift */,
+				ABCA0CBA2A56117600FED760 /* PieceFactory.swift */,
+				ABCA0CA12A5277E000FED760 /* Board.swift */,
+				ABCA0CA62A53138500FED760 /* Row.swift */,
+				ABCA0CBC2A56145A00FED760 /* Cell.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		AB8722C62A6ED4940010CD98 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				ABCA0C962A5264C500FED760 /* GameController.swift */,
+				ABCA0CAB2A53B56E00FED760 /* GameState.swift */,
+				ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */,
+				ABCA0CB82A54FAA500FED760 /* KeyboardInputController.swift */,
+				ABCA0C9A2A52752D00FED760 /* Orientation.swift */,
+				ABCA0C9C2A52759600FED760 /* Renderer.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		ABCA0C7B2A52646100FED760 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +152,7 @@
 		ABCA0C862A52646100FED760 /* FallingBlocks */ = {
 			isa = PBXGroup;
 			children = (
+				AB26F7CD2A69861100242479 /* Audio */,
 				ABCA0CA52A527CAD00FED760 /* Game */,
 				ABCA0C9E2A5275D000FED760 /* View */,
 				ABCA0C8B2A52646100FED760 /* Assets.xcassets */,
@@ -128,17 +186,9 @@
 		ABCA0CA52A527CAD00FED760 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				ABCA0C962A5264C500FED760 /* GameController.swift */,
-				ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */,
-				ABCA0CB82A54FAA500FED760 /* KeyboardInputController.swift */,
-				ABCA0CAB2A53B56E00FED760 /* GameState.swift */,
-				ABCA0C9A2A52752D00FED760 /* Orientation.swift */,
-				ABCA0C9C2A52759600FED760 /* Renderer.swift */,
-				ABCA0C9F2A5276AA00FED760 /* Piece.swift */,
-				ABCA0CBA2A56117600FED760 /* PieceFactory.swift */,
-				ABCA0CA12A5277E000FED760 /* Board.swift */,
-				ABCA0CA62A53138500FED760 /* Row.swift */,
-				ABCA0CBC2A56145A00FED760 /* Cell.swift */,
+				AB8722C62A6ED4940010CD98 /* Game */,
+				AB8722C52A6ED4770010CD98 /* Elements */,
+				AB8722C42A6ED46E0010CD98 /* Audio */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -210,8 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABCA0CC22A570CFA00FED760 /* LICENCE.txt in Resources */,
+				AB26F7CA2A686A0400242479 /* Theme1.m4a in Resources */,
+				AB8722C12A6B08EA0010CD98 /* gameOver.caf in Resources */,
 				ABCA0CA42A527C8400FED760 /* README.md in Resources */,
+				AB8722BF2A6B08E40010CD98 /* oneLine.caf in Resources */,
 				ABCA0C902A52646100FED760 /* Preview Assets.xcassets in Resources */,
+				AB8722C02A6B08E70010CD98 /* fourLines.caf in Resources */,
 				ABCA0C8C2A52646100FED760 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +285,7 @@
 				ABCA0CBD2A56145A00FED760 /* Cell.swift in Sources */,
 				ABCA0CBF2A562D7400FED760 /* GameAnimation.swift in Sources */,
 				ABCA0CA02A5276AA00FED760 /* Piece.swift in Sources */,
+				AB26F7CC2A686D0F00242479 /* AudioEngine.swift in Sources */,
 				ABCA0C992A5264DB00FED760 /* GameView.swift in Sources */,
 				ABCA0CB22A53CE1B00FED760 /* ControlsView.swift in Sources */,
 				ABCA0C972A5264C500FED760 /* GameController.swift in Sources */,
@@ -240,6 +295,7 @@
 				ABCA0CAE2A53CDC600FED760 /* BoardView.swift in Sources */,
 				ABCA0CB02A53CDE800FED760 /* PiecePreview.swift in Sources */,
 				ABCA0CA22A5277E000FED760 /* Board.swift in Sources */,
+				AB8722C32A6ED4130010CD98 /* SoundEffects.swift in Sources */,
 				ABCA0C882A52646100FED760 /* FallingBlocksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

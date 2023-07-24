@@ -110,6 +110,4 @@ class BoardRenderer: Renderer {
             }
         }
     }
-    
-
 }

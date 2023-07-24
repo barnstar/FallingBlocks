@@ -57,13 +57,17 @@ class FBGameController: ObservableObject
     // the drop rate.  The gamestate updates the level via the number of
     // lines
     var levelObserver: AnyCancellable?
-
+    
+    let audioEngine = AudioEngine()
+    
     init() {
         // Reset our gamestate to it's default ready state
         gameState.resetScore()
         
         // Register the action we need to take on different keypresses
         registerInputActions()
+        
+        audioEngine.registerAllEffects()
 
         
         // Fire up the game times and waste the users battery
@@ -130,7 +134,11 @@ class FBGameController: ObservableObject
                 
                 // Remove any filled rows
                 self.board.removeFilledRows()
-
+                
+                if let effect = SoundEffects.effectForLineCount(filledRows.count) {
+                    self.audioEngine.playSound(key: effect.rawValue)
+                }
+                
                 self.spawnPiece()
             }
         }
@@ -147,6 +155,8 @@ class FBGameController: ObservableObject
         if false == board.addActivePiece(piece) {
             board.activePiece = nil
             gameState.status = .gameOver
+            audioEngine.stopMusic()
+            audioEngine.playSound(key: SoundEffects.gameOver.rawValue)
         }
     }
     
@@ -155,7 +165,10 @@ class FBGameController: ObservableObject
         board.reset()
         gameState.startGame()
         spawnPiece()
+        audioEngine.startMusic()
     }
+
+
     
     func registerInputActions() {
         inputController.registerActionForCode(.upArrow) { [weak self] in
