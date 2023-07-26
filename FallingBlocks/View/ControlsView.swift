@@ -26,18 +26,54 @@
 import Foundation
 import SwiftUI
 
-/// Future Home of iPhone/iPad on-screen controls
+/// OnScreen iPad/iPhone controls
 struct ControlsView: View {
-    @EnvironmentObject var gameController: FBGameController
+    var board: Board
     
     var body: some View {
-        VStack {
-            HStack {
-            }
+        HStack {
+            Button(action: {
+                board.moveActivePiece(.left)
+            }, label: {
+                Text("⬅️")
+                    .font(Font.system(size: 42))
+            })
+            .controlStyle()
             
-            HStack {
-            }
+            Button(action: {
+                    board.rotateActivePiece(.left)
+            }, label: {
+                Text("🔄")
+                    .font(Font.system(size: 42))
+
+            })
+            .controlStyle()
             
+            Button(action: {
+                    board.moveActivePiece(.down)
+            }, label: {
+                Text("⏬️")
+                    .font(Font.system(size: 42))
+
+            })
+            .controlStyle()
+            
+            Button(action: {
+                    board.moveActivePiece(.right)
+            }, label: {
+                Text("➡️")
+                    .font(Font.system(size: 42))
+            })
+            .controlStyle()
+
         }
+    }
+}
+
+extension Button {
+    func controlStyle() -> some View {
+        self
+            .controlSize(.large)
+            .buttonStyle(.borderless)
     }
 }

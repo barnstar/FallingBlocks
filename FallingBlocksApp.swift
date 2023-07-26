@@ -40,6 +40,8 @@ struct FallingBlocksApp: App {
         }
         #if os(macOS)
         .windowResizability(.contentSize)
+        #else
+  
         #endif
     }
 }

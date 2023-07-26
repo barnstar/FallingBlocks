@@ -26,6 +26,9 @@
 import SwiftUI
 
 struct Layout {
+    // Defines the percentage of the screen width that should
+    // be used to render the game board.  The remainder will be
+    // use to render the sideBar
     let kBoardWidthFraction = 0.75
 }
 
@@ -33,6 +36,8 @@ struct GameView: View {
     @EnvironmentObject var gameController: FBGameController
     @EnvironmentObject var gameState: GameState
     
+    // Vertical set of "sidebar" controls to be rendered next to the game
+    // board
     var sideBar: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading){
@@ -69,6 +74,7 @@ struct GameView: View {
             ZStack {
                 Image("Blocks")
                     .resizable()
+                    .ignoresSafeArea()
                     .frame(width: geometry.size.width,
                            height: geometry.size.height)
                 
@@ -91,18 +97,21 @@ struct GameView: View {
                             .frame(width: geometry.size.width * 0.2)
                         
                     }
+                    
+                    /// We do not need on-screen buttons on macOS
+                    #if os(iOS)
+                    ControlsView(board: gameController.board)
+                    Spacer().frame(height: 5)
+                    #endif
                 }
+             
             }
         }
     }
 }
 
 struct HeaderView: View {
-    #if os(macOS)
     let kHeaderFontSize = 36.0
-    #else
-    let kHeaderFontSize = 36.0
-    #endif
     
     var body: some View {
         ZStack {

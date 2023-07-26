@@ -24,6 +24,9 @@
 
 
 import Foundation
+#if os(macOS)
+import Cocoa
+#endif
 import GameKit
 import Combine
 
@@ -39,6 +42,14 @@ class KeyboardInputController {
     var actionMap: [GCKeyCode: InputAction] = [:]
     
     init() {
+        // This disables the keyclick for macOS when there's not active first responder
+        // for keybaord events.  We cannot use NSEvent for game input
+        // though since it's not going to cover all those iOS devices with physical
+        // keybaords, so for that, we use GCKeyboardInput
+        #if os(macOS)
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { _ in return nil }
+        #endif
+        
         // The only? way to get a keyboard device is to listen to this
         // connection even.  This always seems to trigger on devices with
         // a physical keybaord attached (including simulators)

@@ -13,6 +13,7 @@
 		AB8722C02A6B08E70010CD98 /* fourLines.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB26F7D02A6B06A300242479 /* fourLines.caf */; };
 		AB8722C12A6B08EA0010CD98 /* gameOver.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB26F7CE2A6B04D000242479 /* gameOver.caf */; };
 		AB8722C32A6ED4130010CD98 /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8722C22A6ED4130010CD98 /* SoundEffects.swift */; };
+		AB8722CA2A7171970010CD98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8722C92A7171970010CD98 /* LaunchScreen.storyboard */; };
 		ABCA0C882A52646100FED760 /* FallingBlocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */; };
 		ABCA0C8C2A52646100FED760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0C8B2A52646100FED760 /* Assets.xcassets */; };
 		ABCA0C902A52646100FED760 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0C8F2A52646100FED760 /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		AB26F7CF2A6B05C100242479 /* oneLine.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oneLine.caf; sourceTree = "<group>"; };
 		AB26F7D02A6B06A300242479 /* fourLines.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fourLines.caf; sourceTree = "<group>"; };
 		AB8722C22A6ED4130010CD98 /* SoundEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
+		AB8722C92A7171970010CD98 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABCA0C842A52646100FED760 /* FallingBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingBlocksApp.swift; sourceTree = "<group>"; };
 		ABCA0C8B2A52646100FED760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				ABCA0CA52A527CAD00FED760 /* Game */,
 				ABCA0C9E2A5275D000FED760 /* View */,
 				ABCA0C8B2A52646100FED760 /* Assets.xcassets */,
+				AB8722C92A7171970010CD98 /* LaunchScreen.storyboard */,
 				ABCA0C8D2A52646100FED760 /* FallingBlocks.entitlements */,
 				ABCA0C8E2A52646100FED760 /* Preview Content */,
 			);
@@ -177,8 +180,8 @@
 				ABCA0CAD2A53CDC600FED760 /* BoardView.swift */,
 				ABCA0CAF2A53CDE800FED760 /* PiecePreview.swift */,
 				ABCA0CB12A53CE1B00FED760 /* ControlsView.swift */,
-				ABCA0CB32A53CE3C00FED760 /* IndicatorViews.swift */,
 				ABCA0CB62A53CFB500FED760 /* ViewUtility.swift */,
+				ABCA0CB32A53CE3C00FED760 /* IndicatorViews.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8722CA2A7171970010CD98 /* LaunchScreen.storyboard in Resources */,
 				ABCA0CC22A570CFA00FED760 /* LICENCE.txt in Resources */,
 				AB26F7CA2A686A0400242479 /* Theme1.m4a in Resources */,
 				AB8722C12A6B08EA0010CD98 /* gameOver.caf in Resources */,
@@ -431,6 +435,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -469,6 +474,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
