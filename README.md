@@ -1,7 +1,6 @@
 # FallingBlocks
 
-Just some messing around with SwiftUI.
-
-Probably the worst possible choice to write a game in, but why not!
+An unpublishable experiment to write a universal app that's more
+than just some fancy-list-of-things, entirely in SwiftUI.
 
 ![image into](./ScreenShot.png)
