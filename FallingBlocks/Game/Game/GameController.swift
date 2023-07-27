@@ -44,7 +44,7 @@ class FBGameController: ObservableObject
     let gameState = GameState()
     
     // Reads and tracks key presses
-    let inputController = KeyboardInputController()
+    let inputController = InputController()
     
     // The primary game timer.  This is independent from whatever
     // magic SwiftUI is doing with that very suspect TimelineView
@@ -101,7 +101,7 @@ class FBGameController: ObservableObject
     /// Call on every clock tick.  This should check the input actions and
     /// update any running animations
     func tick() {
-        if inputController.activeKeyCode == .downArrow {
+        if inputController.downActive {
             dropPiece()
         }
         
@@ -121,7 +121,7 @@ class FBGameController: ObservableObject
             // We're about to spawn a new piece.  Notably, for dropping,
             // we want to ignore things if you leave your finger on the
             // down button
-            inputController.resetActiveKeyCode()
+            inputController.resetActiveActions()
             
             // Check for any filled lines
             let filledRows = board.filledRows()
@@ -171,15 +171,15 @@ class FBGameController: ObservableObject
 
     
     func registerInputActions() {
-        inputController.registerActionForCode(.upArrow) { [weak self] in
+        inputController.registerAction(gamePadInput: .rotate) { [weak self] in
             self?.board.rotateActivePiece(.left)
         }
         
-        inputController.registerActionForCode(.rightArrow) { [weak self] in
+        inputController.registerAction(gamePadInput: .right) { [weak self] in
             self?.board.moveActivePiece(.right)
         }
         
-        inputController.registerActionForCode(.leftArrow) { [weak self] in
+        inputController.registerAction(gamePadInput: .left) { [weak self] in
             self?.board.moveActivePiece(.left)
         }
     }

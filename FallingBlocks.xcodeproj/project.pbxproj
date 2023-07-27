@@ -13,7 +13,6 @@
 		AB8722C02A6B08E70010CD98 /* fourLines.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB26F7D02A6B06A300242479 /* fourLines.caf */; };
 		AB8722C12A6B08EA0010CD98 /* gameOver.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB26F7CE2A6B04D000242479 /* gameOver.caf */; };
 		AB8722C32A6ED4130010CD98 /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8722C22A6ED4130010CD98 /* SoundEffects.swift */; };
-		AB8722CA2A7171970010CD98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8722C92A7171970010CD98 /* LaunchScreen.storyboard */; };
 		ABCA0C882A52646100FED760 /* FallingBlocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0C872A52646100FED760 /* FallingBlocksApp.swift */; };
 		ABCA0C8C2A52646100FED760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0C8B2A52646100FED760 /* Assets.xcassets */; };
 		ABCA0C902A52646100FED760 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCA0C8F2A52646100FED760 /* Preview Assets.xcassets */; };
@@ -32,7 +31,7 @@
 		ABCA0CB22A53CE1B00FED760 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB12A53CE1B00FED760 /* ControlsView.swift */; };
 		ABCA0CB42A53CE3C00FED760 /* IndicatorViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB32A53CE3C00FED760 /* IndicatorViews.swift */; };
 		ABCA0CB72A53CFB500FED760 /* ViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB62A53CFB500FED760 /* ViewUtility.swift */; };
-		ABCA0CB92A54FAA500FED760 /* KeyboardInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB82A54FAA500FED760 /* KeyboardInputController.swift */; };
+		ABCA0CB92A54FAA500FED760 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CB82A54FAA500FED760 /* InputController.swift */; };
 		ABCA0CBB2A56117600FED760 /* PieceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CBA2A56117600FED760 /* PieceFactory.swift */; };
 		ABCA0CBD2A56145A00FED760 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CBC2A56145A00FED760 /* Cell.swift */; };
 		ABCA0CBF2A562D7400FED760 /* GameAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */; };
@@ -67,7 +66,7 @@
 		ABCA0CB12A53CE1B00FED760 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		ABCA0CB32A53CE3C00FED760 /* IndicatorViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViews.swift; sourceTree = "<group>"; };
 		ABCA0CB62A53CFB500FED760 /* ViewUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtility.swift; sourceTree = "<group>"; };
-		ABCA0CB82A54FAA500FED760 /* KeyboardInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInputController.swift; sourceTree = "<group>"; };
+		ABCA0CB82A54FAA500FED760 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		ABCA0CBA2A56117600FED760 /* PieceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceFactory.swift; sourceTree = "<group>"; };
 		ABCA0CBC2A56145A00FED760 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAnimation.swift; sourceTree = "<group>"; };
@@ -124,7 +123,7 @@
 				ABCA0C962A5264C500FED760 /* GameController.swift */,
 				ABCA0CAB2A53B56E00FED760 /* GameState.swift */,
 				ABCA0CBE2A562D7400FED760 /* GameAnimation.swift */,
-				ABCA0CB82A54FAA500FED760 /* KeyboardInputController.swift */,
+				ABCA0CB82A54FAA500FED760 /* InputController.swift */,
 				ABCA0C9A2A52752D00FED760 /* Orientation.swift */,
 				ABCA0C9C2A52759600FED760 /* Renderer.swift */,
 			);
@@ -262,7 +261,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB8722CA2A7171970010CD98 /* LaunchScreen.storyboard in Resources */,
 				ABCA0CC22A570CFA00FED760 /* LICENCE.txt in Resources */,
 				AB26F7CA2A686A0400242479 /* Theme1.m4a in Resources */,
 				AB8722C12A6B08EA0010CD98 /* gameOver.caf in Resources */,
@@ -284,7 +282,7 @@
 				ABCA0CB42A53CE3C00FED760 /* IndicatorViews.swift in Sources */,
 				ABCA0CB72A53CFB500FED760 /* ViewUtility.swift in Sources */,
 				ABCA0C9B2A52752D00FED760 /* Orientation.swift in Sources */,
-				ABCA0CB92A54FAA500FED760 /* KeyboardInputController.swift in Sources */,
+				ABCA0CB92A54FAA500FED760 /* InputController.swift in Sources */,
 				ABCA0CA72A53138500FED760 /* Row.swift in Sources */,
 				ABCA0CBD2A56145A00FED760 /* Cell.swift in Sources */,
 				ABCA0CBF2A562D7400FED760 /* GameAnimation.swift in Sources */,

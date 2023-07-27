@@ -68,5 +68,179 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29F8156B-8CA7-4DF5-B3AC-84C9045135DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallingBlocks/Game/Game/KeyboardInputController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "setupGamePadHandler()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29F8156B-8CA7-4DF5-B3AC-84C9045135DC - e84e8c54f710c682"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallingBlocks.KeyboardInputController.setupGamePadHandler() -&gt; ()"
+                  moduleName = "FallingBlocks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Source/FallingBlocks/FallingBlocks/Game/Game/KeyboardInputController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "29F8156B-8CA7-4DF5-B3AC-84C9045135DC - e84e8c54f710c761"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallingBlocks.KeyboardInputController.setupGamePadHandler() -&gt; ()"
+                  moduleName = "FallingBlocks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Source/FallingBlocks/FallingBlocks/Game/Game/KeyboardInputController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "29F8156B-8CA7-4DF5-B3AC-84C9045135DC - 6dd7cde4e8c95b0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 (FallingBlocks.KeyboardInputController) -&gt; (__C.GCControllerButtonInput, Swift.Float, Swift.Bool) -&gt; () in FallingBlocks.KeyboardInputController.setupGamePadHandler() -&gt; ()"
+                  moduleName = "FallingBlocks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Source/FallingBlocks/FallingBlocks/Game/Game/KeyboardInputController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "29F8156B-8CA7-4DF5-B3AC-84C9045135DC - 511d9a4301508578"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 (__C.GCControllerButtonInput, Swift.Float, Swift.Bool) -&gt; () in implicit closure #1 (FallingBlocks.KeyboardInputController) -&gt; (__C.GCControllerButtonInput, Swift.Float, Swift.Bool) -&gt; () in FallingBlocks.KeyboardInputController.setupGamePadHandler() -&gt; ()"
+                  moduleName = "FallingBlocks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Source/FallingBlocks/FallingBlocks/Game/Game/KeyboardInputController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3322EA1-80E3-4903-8FBB-EE85346AD910"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallingBlocks/Game/Game/KeyboardInputController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "rotateHandler(_:val:pressed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A3322EA1-80E3-4903-8FBB-EE85346AD910 - 49c63be6a25a0347"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallingBlocks.KeyboardInputController.buttonHandler(_: __C.GCControllerButtonInput, val: Swift.Float, pressed: Swift.Bool) -&gt; ()"
+                  moduleName = "FallingBlocks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Source/FallingBlocks/FallingBlocks/Game/Game/KeyboardInputController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "A3322EA1-80E3-4903-8FBB-EE85346AD910 - 49c63be6a25a0366"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallingBlocks.KeyboardInputController.buttonHandler(_: __C.GCControllerButtonInput, val: Swift.Float, pressed: Swift.Bool) -&gt; ()"
+                  moduleName = "FallingBlocks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Source/FallingBlocks/FallingBlocks/Game/Game/KeyboardInputController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A438919-1940-4B92-812B-A4426A50F756"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallingBlocks/Game/Game/KeyboardInputController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "movementHandler(_:x:y:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6A438919-1940-4B92-812B-A4426A50F756 - 54e79083ed785058"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallingBlocks.KeyboardInputController.movementHandler(_: __C.GCControllerDirectionPad, x: Swift.Float, y: Swift.Float) -&gt; ()"
+                  moduleName = "FallingBlocks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Source/FallingBlocks/FallingBlocks/Game/Game/KeyboardInputController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "6A438919-1940-4B92-812B-A4426A50F756 - 54e79083ed785079"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallingBlocks.KeyboardInputController.movementHandler(_: __C.GCControllerDirectionPad, x: Swift.Float, y: Swift.Float) -&gt; ()"
+                  moduleName = "FallingBlocks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Source/FallingBlocks/FallingBlocks/Game/Game/KeyboardInputController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
