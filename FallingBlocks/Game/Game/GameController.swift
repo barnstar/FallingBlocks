@@ -101,7 +101,7 @@ class FBGameController: ObservableObject
     /// Call on every clock tick.  This should check the input actions and
     /// update any running animations
     func tick() {
-        if inputController.downActive {
+        if inputController.activeActions.contains(.drop) {
             dropPiece()
         }
         
@@ -171,15 +171,15 @@ class FBGameController: ObservableObject
 
     
     func registerInputActions() {
-        inputController.registerAction(gamePadInput: .rotate) { [weak self] in
+        inputController.registerAction(input: .rotate) { [weak self] in
             self?.board.rotateActivePiece(.left)
         }
         
-        inputController.registerAction(gamePadInput: .right) { [weak self] in
+        inputController.registerAction(input: .right) { [weak self] in
             self?.board.moveActivePiece(.right)
         }
         
-        inputController.registerAction(gamePadInput: .left) { [weak self] in
+        inputController.registerAction(input: .left) { [weak self] in
             self?.board.moveActivePiece(.left)
         }
     }

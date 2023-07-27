@@ -30,36 +30,30 @@ import Cocoa
 import GameKit
 import Combine
 
-typealias InputAction = () -> Void
+typealias InputActionCallback = () -> Void
 
+// Represents the different possible user interactions/inputs
+// for the game
 enum GameInputAction {
     case left
     case right
     case rotate
     case drop
-    
-    static func fromKeyCode(_ code: GCKeyCode) -> GameInputAction? {
-        switch code {
-        case .leftArrow: return .left
-        case .rightArrow: return .right
-        case .downArrow: return .drop
-        case .upArrow: return .rotate
-        default: return nil
-        }
-    }
 }
 
 class InputController {
-    
-    var keyboardObserver: AnyCancellable?
-    var gamepadObserver: AnyCancellable?
 
+    // Non nil if we have an available keyboard input device
     var keyboardInput: GCKeyboardInput?
+    
+    // Non nil if we have a valid gamepad controller input device
     var gamepadInput: GCController?
 
-    @Published var downActive: Bool = false
-
-    var actions: [GameInputAction: InputAction] = [:]
+    // Input actions that are currently active - ie: button is still pressed
+    var activeActions = Set<GameInputAction>()
+    
+    // Callbacks to be invoked on a "button down" event
+    var actionCallbacks: [GameInputAction: InputActionCallback] = [:]
     
     init() {
         // This disables the keyclick for macOS when there's not active first responder
@@ -70,11 +64,20 @@ class InputController {
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) { _ in return nil }
         #endif
         
+        watchForInputDevices()
+    }
+    
+    private var keyboardObserver: AnyCancellable?
+    private var gamepadObserver: AnyCancellable?
+    
+    func watchForInputDevices() {
         keyboardObserver = NotificationCenter.default
             .publisher(for: .GCKeyboardDidConnect)
             .sink { [weak self] notification in
-                if let keyboard = (notification.object as? GCKeyboard)?.keyboardInput {
+                if let keyboard = (notification.object as? GCKeyboard)?.keyboardInput,
+                   nil == self?.keyboardInput {
                     self?.setupKeyboardInput(keyboard)
+                    self?.keyboardObserver = nil
                 }
             }
         
@@ -82,22 +85,24 @@ class InputController {
             .publisher(for: .GCControllerDidConnect)
             .sink { [weak self] notification in
                 let controllers = GCController.controllers()
-                if let controller = controllers.first(where: { $0.extendedGamepad != nil }) {
+                if let controller = controllers.first(where: { $0.extendedGamepad != nil }),
+                   nil == self?.gamepadInput {
                     self?.setupGamePadHandler(controller)
+                    self?.gamepadObserver = nil
                 }
             }
     }
     
     // Register a callback that will be triggered whenever a given keycode is
     // observed
-    func registerAction(gamePadInput: GameInputAction,
-                        action: @escaping InputAction) {
-        actions[gamePadInput] = action
+    func registerAction(input: GameInputAction,
+                        action: @escaping InputActionCallback) {
+        actionCallbacks[input] = action
     }
     
     // Resets the currently pressed key
     func resetActiveActions() {
-        downActive = false
+        activeActions.removeAll()
     }
 }
 
@@ -107,27 +112,35 @@ extension InputController {
     func setupKeyboardInput(_ keyboard: GCKeyboardInput) {
         keyboardInput = keyboard
         keyboardInput?.keyChangedHandler = self.handleKeyPress
+        print("Keyboard input configured and available")
+    }
+    
+    // Static mappying of the arrow keys to game actions.
+    func actionFromKeyCode(_ code: GCKeyCode) -> GameInputAction? {
+        switch code {
+        case .leftArrow: return .left
+        case .rightArrow: return .right
+        case .downArrow: return .drop
+        case .upArrow: return .rotate
+        default: return nil
+        }
     }
     
     func handleKeyPress(input: GCKeyboardInput,
                         button: GCControllerButtonInput,
                         code: GCKeyCode,
                         val: Bool) -> Void {
-        guard let action = GameInputAction.fromKeyCode(code) else {
+        guard let action = actionFromKeyCode(code) else {
             return
         }
 
         switch button.isPressed {
         case false:
-            if action == .drop {
-                downActive = false
-            }
+            activeActions.remove(action)
         case true:
-            if action == .drop {
-                downActive = true
-            }
+            activeActions.insert(action)
             // Fetch the action for the key code and execute it
-            actions[action]?()
+            actionCallbacks[action]?()
         }
     }
 }
@@ -139,21 +152,39 @@ extension InputController {
         self.gamepadInput = controller
         gamepadInput?.extendedGamepad!.buttonA.valueChangedHandler = aButtonHandler
         gamepadInput?.extendedGamepad!.dpad.valueChangedHandler = dpadHandler
+        print("Gamepad input configured and available")
     }
 
     func aButtonHandler(_ button: GCControllerButtonInput, val: Float, pressed: Bool) {
-        if pressed, let action = actions[.rotate]{
-            action()
+        if let action = actionCallbacks[.rotate]{
+            switch pressed {
+            case true:
+                activeActions.insert(.rotate)
+                action()
+            case false:
+                activeActions.remove(.rotate)
+            }
         }
     }
     
     func dpadHandler(_ pad: GCControllerDirectionPad, x: Float, y:Float) {
-        if x > 0, let action = actions[.right] {
+        if x > 0, let action = actionCallbacks[.right] {
+            activeActions.insert(.right)
             action()
         }
-        if x < 0, let action = actions[.left] {
+        else if x < 0, let action = actionCallbacks[.left] {
+            activeActions.insert(.left)
             action()
         }
-        downActive = (y<0)
+        else if x == 0 {
+            activeActions.remove(.left)
+            activeActions.remove(.right)
+        }
+        
+        if y < 0 {
+            activeActions.insert(.drop)
+        } else {
+            activeActions.remove(.drop)
+        }
     }
 }
