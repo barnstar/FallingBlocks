@@ -30,6 +30,11 @@ enum SoundEffectError: Error {
     case missingFile
 }
 
+//Effects are expected to be in this format with the file
+//names equal to the rawValue of the SoundEffects enum
+//Misssing/malformed files will simply be ignored
+let kEffectFormat = "mp3"
+
 enum SoundEffects: String, CaseIterable {
     case gameOver
     case oneLine
@@ -38,7 +43,7 @@ enum SoundEffects: String, CaseIterable {
     case placePiece
     
     func effectData() throws -> Data {
-        if let url = Bundle.main.url(forResource: self.rawValue, withExtension: "mp3") {
+        if let url = Bundle.main.url(forResource: self.rawValue, withExtension: kEffectFormat) {
             let effectData = try Data(contentsOf: url)
             return effectData
         }
@@ -50,9 +55,7 @@ extension SoundEffects {
     static func effectForLineCount(_ count: Int) -> SoundEffects? {
         switch count {
         case 0: return .placePiece
-        case 1: return .oneLine
-        case 2: return .oneLine
-        case 3: return .oneLine
+        case 1...3: return .oneLine
         case 4: return .fourLines
         default: return nil
         }
