@@ -33,12 +33,12 @@ enum SoundEffectError: Error {
 enum SoundEffects: String, CaseIterable {
     case gameOver
     case oneLine
-    case twoLines
-    case threeLines
     case fourLines
+    case levelUp
+    case placePiece
     
     func effectData() throws -> Data {
-        if let url = Bundle.main.url(forResource: self.rawValue, withExtension: "caf") {
+        if let url = Bundle.main.url(forResource: self.rawValue, withExtension: "mp3") {
             let effectData = try Data(contentsOf: url)
             return effectData
         }
@@ -49,6 +49,7 @@ enum SoundEffects: String, CaseIterable {
 extension SoundEffects {
     static func effectForLineCount(_ count: Int) -> SoundEffects? {
         switch count {
+        case 0: return .placePiece
         case 1: return .oneLine
         case 2: return .oneLine
         case 3: return .oneLine
@@ -63,7 +64,7 @@ extension AudioEngine {
         SoundEffects.allCases.forEach { effect in
             do {
                 let data = try effect.effectData()
-                try registerEffect(data: data, key: effect.rawValue)
+                try registerEffect(data: data, key: effect)
             } catch {
                 print("No data for effect \(effect)")
             }

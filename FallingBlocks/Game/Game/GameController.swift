@@ -82,6 +82,9 @@ class FBGameController: ObservableObject
         levelObserver = gameState.$level
             .sink { level in
                 self.setSpeed(level)
+                if level > 1 {
+                    self.audioEngine.playSound(.levelUp)
+                }
             }
     }
     
@@ -140,7 +143,7 @@ class FBGameController: ObservableObject
                 self.board.removeFilledRows()
                 
                 if let effect = SoundEffects.effectForLineCount(filledRows.count) {
-                    self.audioEngine.playSound(key: effect.rawValue)
+                    self.audioEngine.playSound(effect)
                 }
                 
                 self.spawnPiece()
@@ -160,7 +163,7 @@ class FBGameController: ObservableObject
             board.activePiece = nil
             gameState.status = .gameOver
             audioEngine.stopMusic()
-            audioEngine.playSound(key: SoundEffects.gameOver.rawValue)
+            audioEngine.playSound(.gameOver)
         }
     }
     

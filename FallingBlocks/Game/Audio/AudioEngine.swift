@@ -28,7 +28,7 @@ import AVFoundation
 
 class AudioEngine {
     var musicPlayer: AVAudioPlayer?
-    var effectPlayers = [String: AVAudioPlayer]()
+    var effectPlayers = [SoundEffects: AVAudioPlayer]()
 
     func startMusic(_ file: String? = "Theme1.m4a") {
         musicPlayer?.stop()
@@ -48,14 +48,14 @@ class AudioEngine {
         musicPlayer = nil
     }
     
-    func registerEffect(data: Data, key: String) throws {
+    func registerEffect(data: Data, key: SoundEffects) throws {
         let effectPlayer = try AVAudioPlayer(data: data)
         effectPlayer.numberOfLoops = 0
         effectPlayers[key] = effectPlayer
     }
     
-    func playSound(key: String) {
-        let effectPlayer = effectPlayers[key]
+    func playSound(_ effect: SoundEffects) {
+        let effectPlayer = effectPlayers[effect]
         effectPlayer?.play()
     }
 }
