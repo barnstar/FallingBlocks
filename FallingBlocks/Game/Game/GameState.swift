@@ -24,6 +24,7 @@
 
 
 import Foundation
+import SwiftUI
 
 let kMaxLevel = 10
 let kLinesPerLevel = 10
@@ -33,7 +34,8 @@ class GameStateViewModel: ObservableObject {
     @Published var scoreText: String = ""
     @Published var levelText: String = ""
     @Published var linesText: String = ""
-    @Published var startButtonOpacity: Double = 1.0
+    @Published var startButtonText: String = ""
+    @Published var startButtonColour: Color = .red
     @Published var nextPiece: Piece?
 }
 
@@ -42,6 +44,7 @@ class GameState: ObservableObject {
     enum GameStatus {
         case gameOn
         case gameOver
+        case paused
     }
 
     @Published var viewModel = GameStateViewModel()
@@ -54,7 +57,17 @@ class GameState: ObservableObject {
     
     @Published var status: GameStatus = .gameOver {
         didSet {
-            viewModel.startButtonOpacity = status == .gameOn ? 0.0 : 1.0
+            switch status {
+            case .gameOn:
+                viewModel.startButtonText = "Pause"
+                viewModel.startButtonColour = .orange
+            case .gameOver:
+                viewModel.startButtonText = "Start"
+                viewModel.startButtonColour = .green
+            case .paused:
+                viewModel.startButtonText = "Resume"
+                viewModel.startButtonColour = .yellow
+            }
         }
     }
 

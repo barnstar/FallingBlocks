@@ -26,11 +26,7 @@
 import Foundation
 import SwiftUI
 
-#if os(macOS)
 let kIndicatorFontSize = 16.0
-#else
-let kIndicatorFontSize = 16.0
-#endif
 
 extension Text {
     func indicatorStyle() -> some View {
@@ -49,30 +45,25 @@ struct StartButton: View {
         Button(action: action) {
             ZStack {
                 Rectangle()
-                    .fillShadow(.red)
-                Text("Start")
+                    .fillShadow(model.startButtonColour)
+                Text(model.startButtonText)
                     .indicatorStyle()
             }
         }
         .buttonStyle(.borderless)
         .frame(height: 60)
-        .opacity(model.startButtonOpacity)
     }
 }
 
 struct ScoreView: View {
     @ObservedObject var model: GameStateViewModel
     
-    @State var scale: Double = 1.0
-    
     var body: some View {
         ZStack {
             Rectangle()
                 .fillShadow(.orange)
-                .scaleEffect(scale)                
             Text(model.scoreText)
                 .indicatorStyle()
-
         }
         .frame(height: 60)
     }
@@ -94,7 +85,6 @@ struct LinesView: View {
 
 struct LevelView: View {
     @ObservedObject var model: GameStateViewModel
-    
 
     var body: some View {
         ZStack {

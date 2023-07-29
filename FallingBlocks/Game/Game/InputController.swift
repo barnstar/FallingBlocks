@@ -150,12 +150,12 @@ extension InputController {
     
     func setupGamePadHandler(_ controller: GCController) {
         self.gamepadInput = controller
-        gamepadInput?.extendedGamepad!.buttonA.valueChangedHandler = aButtonHandler
-        gamepadInput?.extendedGamepad!.dpad.valueChangedHandler = dpadHandler
+        gamepadInput?.extendedGamepad!.buttonA.valueChangedHandler = rotateButtonHandler
+        gamepadInput?.extendedGamepad!.dpad.valueChangedHandler = movementHandler
         print("Gamepad input configured and available")
     }
 
-    func aButtonHandler(_ button: GCControllerButtonInput, val: Float, pressed: Bool) {
+    func rotateButtonHandler(_ button: GCControllerButtonInput, val: Float, pressed: Bool) {
         if let action = actionCallbacks[.rotate]{
             switch pressed {
             case true:
@@ -167,7 +167,7 @@ extension InputController {
         }
     }
     
-    func dpadHandler(_ pad: GCControllerDirectionPad, x: Float, y:Float) {
+    func movementHandler(_ pad: GCControllerDirectionPad, x: Float, y:Float) {
         if x > 0, let action = actionCallbacks[.right] {
             activeActions.insert(.right)
             action()

@@ -101,6 +101,10 @@ class FBGameController: ObservableObject
     /// Call on every clock tick.  This should check the input actions and
     /// update any running animations
     func tick() {
+        guard gameState.status == .gameOn else {
+            return
+        }
+        
         if inputController.activeActions.contains(.drop) {
             dropPiece()
         }
@@ -160,12 +164,25 @@ class FBGameController: ObservableObject
         }
     }
     
-    // Starts the game
-    func start() {
-        board.reset()
-        gameState.startGame()
-        spawnPiece()
-        audioEngine.startMusic()
+    func pause() {
+        gameState.status = .paused
+        audioEngine.musicPlayer?.pause()
+    }
+    
+    // Starts/resume or pauses the game
+    func startPause() {
+        switch gameState.status {
+        case .gameOver:
+            board.reset()
+            gameState.startGame()
+            spawnPiece()
+            audioEngine.startMusic()
+        case .gameOn:
+            pause()
+        case .paused:
+            gameState.status = .gameOn
+            audioEngine.musicPlayer?.play()
+        }
     }
 
 

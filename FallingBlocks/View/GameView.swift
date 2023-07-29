@@ -61,7 +61,7 @@ struct GameView: View {
                 Spacer.vertical(30)
                 
                 StartButton(model: gameState.viewModel) {
-                    gameController.start()
+                    gameController.startPause()
                 }
                 
                 Spacer()

@@ -22,7 +22,6 @@
  * SOFTWARE.
  **********************************************************************************/
 
-
 import SwiftUI
 
 @main
@@ -37,11 +36,15 @@ struct FallingBlocksApp: App {
                     #endif
                     .environmentObject(gameController)
                     .environmentObject(gameController.gameState)
+                    #if os(macOS)
+                    .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { _ in
+                        gameController.pause()
+                    }
+                    #endif
         }
         #if os(macOS)
         .windowResizability(.contentSize)
         #else
-  
         #endif
     }
 }
